@@ -1,0 +1,24 @@
+﻿/* CSS Reset */
+
+h1,h2,h3,h4,h5,h6{margin:0.1em;padding:0.1em;border:0;font-size:100%;font-weight:bold;display:normal;}
+h1{font-size:1.5em;}
+h2{font-size:1.4em;}
+h3{font-size:1.3em;}
+h4{font-size:1.2em;}
+h5{font-size:1.1em;}
+h6{font-size:1.0em;}
+h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-size:85%;}
+
+p{margin:0.1em;font-size:0.9em;}
+span{margin:0.1em;font-size:0.8em;}
+
+hr{margin-top:0.5em;margin-bottom:0.5em;padding:0.5em inherit 0.5em inherit;color:#C0C0C0;}
+
+/* Large desktop */
+@media (min-width: 1024px) {}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {}
+/* Landscape phones and down */
+@media (max-width: 480px) {}
