@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head id="Head_Page">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sitio web para uso personal y a modo experimental para nuestros desarrollos web, email, dns.">
+    <meta name="keywords" content="informática, automática, control numérico">
+    <meta name="author" content="bustamantepalacio.info">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <title>Admin - L@BP</title>
+
+    <link href="../Frameworks/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Frameworks/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../Styles/styles-Reset.css" rel="stylesheet" />
+
+    <style type="text/css">
+        /*...*/
+    </style>
+    <script type="text/javascript">
+        //..
+    </script>
+</head>
+<body>
+    <form id="id_form_dni" name="name_form_dni">
+
+        <div class="navbar navbar-custom navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                        <a class="btn btn-sm btn-default hidden-print" href="http://bustamantepalacio.info"><strong>L@BP</strong></a>
+                        <a class="btn btn-sm btn-default hidden-print" href="index.html">&nbsp;<span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                        <h1><a href="http://bustamantepalacio.info">L@BP</a><small>&nbsp;&nbsp;panel de gestión</small></h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <div class="pull-right">
+                            <a href="#" class="btn btn-sm btn-default">&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;</a>
+                        </div>
+                        <div class="pull-right">
+                            <span class="label label-default">&nbsp;</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p><strong>Acceder...</strong></p>
+                        </div>
+                        <div class="panel-body">
+                            <input type="text" id="id_input_codigo" name="name_input_codigo" placeholder="Usuario" class="form-control input-sm">
+                            <input type="password" id="id_input_password" name="name_input_password" placeholder="Contraseña" class="form-control input-sm">
+                            <button type="button" id="id_button_acceder" name="name_button_acceder" class="btn btn-sm btn-primary btn-block">Acceder</button>
+                            <div class="pull-right">
+                                 <a href="javascript:alert('Hola Mundo!');" class="btn btn-sm btn-default">Execute JavaScript</a>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <p><strong>indicar usuario y contraseña...</strong></p>
+                            <hr />
+                            <a href="#" class="btn btn-xs btn-info" data-toggle="modal" data-target="#DivModalAyuda">[Ayuda]</a>
+                            <a href="https://webmail.bustamantepalacio.info" class="btn btn-xs btn-info" target="_blank">[Correo@]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-8 col-lg-9">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="container-fluid">
+            <footer>
+
+            </footer>
+        </div>
+
+    </form>
+
+    <script src="../Frameworks/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../Frameworks/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://sinfonia.clinica-atenea.com/include/documentosidentidad.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajaxSetup({ cache: false }); // Set cache for ajax in jquery
+        });
+    </script>
+
+</body>
+</html>
