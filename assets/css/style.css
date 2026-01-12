@@ -397,15 +397,21 @@ a:focus {
 .ptb .row {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: var(--space-lg);
     flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .ptb .col-12 {
-    flex: 0 1 400px;
+    flex: 1 1 300px;
+    max-width: 400px;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ptb .col-12:nth-child(1) { animation-delay: 0.2s; }
@@ -415,6 +421,9 @@ a:focus {
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     border-radius: 8px;
     overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .LI-profile-badge:hover {
@@ -426,8 +435,10 @@ a:focus {
 .LI-simple-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 1.5rem;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.25rem 2rem;
+    min-width: 280px;
     background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.05) 100%);
     border: 1px solid rgba(249, 115, 22, 0.3);
     border-radius: 8px;
@@ -437,6 +448,7 @@ a:focus {
     color: var(--color-accent);
     text-decoration: none;
     transition: all var(--transition-normal);
+    text-align: center;
 }
 
 .LI-simple-link::before {
@@ -712,19 +724,22 @@ a:focus {
     
     .ptb .row {
         gap: var(--space-md);
+        flex-direction: column;
+        align-items: center;
     }
     
     .ptb .col-12 {
-        flex: 1 1 100%;
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 350px;
     }
     
     /* LinkedIn fallback on mobile */
     .LI-simple-link {
         font-size: 1rem;
-        padding: 0.875rem 1.25rem;
+        padding: 1rem 1.5rem;
         width: 100%;
-        max-width: 320px;
-        justify-content: center;
+        min-width: unset;
     }
 }
 
