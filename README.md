@@ -38,7 +38,7 @@ Personal website of the Bustamante Palacio brothers with a distinctive dark them
 
 - LinkedIn profile badges integration
 - Contact information via email
-- Social media links (Twitter/X, GitHub, LinkedIn)
+- Social media links (Twitter/X, GitHub, LinkedIn, GitHub Pages)
 - Animated hero section with gradient backgrounds
 - Responsive footer with contact details
 
