@@ -1,0 +1,710 @@
+/*
+ * Bustamante Palacio Website
+ * Modern redesign with distinctive aesthetics
+ */
+
+/* ================================================================
+   CUSTOM PROPERTIES (CSS Variables)
+================================================================ */
+:root {
+    /* Color palette - Deep ocean meets sunset warmth */
+    --color-primary: #0f172a;
+    --color-secondary: #1e3a5f;
+    --color-accent: #f97316;
+    --color-accent-light: #fb923c;
+    --color-highlight: #06b6d4;
+    --color-text: #e2e8f0;
+    --color-text-muted: #94a3b8;
+    --color-white: #ffffff;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c4a6e 100%);
+    --gradient-accent: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    --gradient-separator: linear-gradient(135deg, #0c4a6e 0%, #164e63 50%, #0f172a 100%);
+    --gradient-footer: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+    
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
+
+/* ================================================================
+   FONTS
+================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ================================================================
+   RESET & BASE
+================================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-primary);
+    overflow-x: hidden;
+}
+
+/* ================================================================
+   TYPOGRAPHY
+================================================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 500;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-accent-light);
+}
+
+/* ================================================================
+   UTILITY CLASSES
+================================================================ */
+.centered {
+    text-align: center;
+}
+
+.mt {
+    margin-top: var(--space-lg);
+}
+
+.mb {
+    margin-bottom: var(--space-lg);
+}
+
+.ptb {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+/* ================================================================
+   ANIMATIONS
+================================================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+
+/* ================================================================
+   HEADER / HERO SECTION
+================================================================ */
+#h {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--gradient-hero);
+    overflow: hidden;
+}
+
+/* Animated background pattern */
+#h::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(249, 115, 22, 0.05) 0%, transparent 30%);
+    pointer-events: none;
+}
+
+/* Geometric pattern overlay */
+#h::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(30deg, transparent 49.5%, rgba(255,255,255,0.02) 49.5%, rgba(255,255,255,0.02) 50.5%, transparent 50.5%),
+        linear-gradient(-30deg, transparent 49.5%, rgba(255,255,255,0.02) 49.5%, rgba(255,255,255,0.02) 50.5%, transparent 50.5%);
+    background-size: 60px 100px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#h .logo {
+    position: relative;
+    z-index: 10;
+    padding: var(--space-md) var(--space-md);
+    animation: fadeIn 1s ease forwards;
+}
+
+#h .logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#h .logo h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.3em;
+}
+
+#h .logo h2 small {
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+#h .logo h2 small:last-child {
+    font-family: var(--font-mono);
+    font-size: 0.5em;
+    color: var(--color-highlight);
+    opacity: 1;
+    background: rgba(6, 182, 212, 0.1);
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+#h .container {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: var(--space-xl);
+}
+
+#h h1 {
+    color: var(--color-text);
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+#h h1 b {
+    color: var(--color-white);
+    font-weight: 700;
+    position: relative;
+}
+
+#h h1 b::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+
+/* Feature icons */
+#h .row.mt {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+}
+
+#h .row.mt .col-sm-4 {
+    flex: 0 1 200px;
+    max-width: 200px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+#h .row.mt .col-sm-4:nth-child(1) { animation-delay: 0.5s; }
+#h .row.mt .col-sm-4:nth-child(2) { animation-delay: 0.7s; }
+#h .row.mt .col-sm-4:nth-child(3) { animation-delay: 0.9s; }
+
+#h i {
+    font-size: 3rem;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: var(--space-sm);
+    transition: transform var(--transition-normal), color var(--transition-fast);
+}
+
+#h .col-sm-4:hover i {
+    transform: scale(1.1);
+    color: var(--color-accent-light);
+    animation: float 2s ease-in-out infinite;
+}
+
+#h h3 {
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ================================================================
+   LINKEDIN BADGES SECTION
+================================================================ */
+.ptb {
+    background: var(--color-primary);
+    position: relative;
+}
+
+.ptb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-highlight), transparent);
+}
+
+.ptb .row {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.ptb .col-12 {
+    flex: 0 1 400px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.ptb .col-12:nth-child(1) { animation-delay: 0.2s; }
+.ptb .col-12:nth-child(2) { animation-delay: 0.4s; }
+
+.LI-profile-badge {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.LI-profile-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ================================================================
+   ITEMS/SHOWCASE SECTION
+================================================================ */
+.container:has(> .row > .col-md-10 > img) {
+    padding: var(--space-lg) 0;
+    background: transparent;
+}
+
+.container img.img-fluid {
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.container img.img-fluid:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 35px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Placeholder for missing image */
+.container .col-md-10 {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================================================================
+   SEPARATOR SECTION
+================================================================ */
+#sep {
+    position: relative;
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-separator);
+    overflow: hidden;
+}
+
+/* Animated gradient background */
+#sep::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 30% 70%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 30%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+    animation: gradientMove 15s ease infinite;
+    background-size: 200% 200%;
+}
+
+/* Wave pattern */
+#sep::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.1,118.92,156.63,69.08,321.39,56.44Z' fill='%230f172a' fill-opacity='0.3'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+}
+
+#sep .container {
+    position: relative;
+    z-index: 10;
+    padding: var(--space-xl) var(--space-md);
+}
+
+#sep h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+#sep h3 {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* ================================================================
+   FOOTER
+================================================================ */
+#f {
+    position: relative;
+    background: var(--gradient-footer);
+    padding: var(--space-lg) 0;
+    overflow: hidden;
+}
+
+#f::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 0% 100%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(0,0,0,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+#f .container-fluid {
+    position: relative;
+    z-index: 10;
+}
+
+#f .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding: 0 var(--space-md);
+}
+
+#f .col-12 {
+    flex: 1 1 250px;
+    text-align: center;
+}
+
+#f .col-12:last-child {
+    flex: 0 1 auto;
+}
+
+#f span {
+    display: block;
+    color: var(--color-white);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+#f a {
+    color: var(--color-white);
+    transition: all var(--transition-fast);
+}
+
+#f a:hover {
+    color: var(--color-primary);
+}
+
+#f .badge {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
+    transition: all var(--transition-fast);
+}
+
+#f .badge:hover {
+    background: var(--color-white) !important;
+    color: var(--color-accent) !important;
+    transform: scale(1.05);
+}
+
+#f i {
+    font-size: 2rem;
+    margin: 0 var(--space-xs);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    opacity: 0.9;
+}
+
+#f i:hover {
+    transform: translateY(-3px) scale(1.1);
+    opacity: 1;
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+================================================================ */
+@media (max-width: 991px) {
+    #h {
+        min-height: auto;
+        padding-bottom: var(--space-lg);
+    }
+    
+    #h .logo {
+        text-align: center;
+        padding: var(--space-md);
+    }
+    
+    #h .logo h2 {
+        justify-content: center;
+    }
+    
+    #h .row.mt .col-sm-4 {
+        flex: 0 1 150px;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --space-lg: 3rem;
+        --space-xl: 4rem;
+    }
+    
+    #h .container {
+        padding: var(--space-md);
+    }
+    
+    #h .row.mt {
+        gap: var(--space-sm);
+    }
+    
+    #h .row.mt .col-sm-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: var(--space-sm);
+    }
+    
+    #h i {
+        font-size: 2.5rem;
+    }
+    
+    #sep {
+        min-height: 40vh;
+        padding: var(--space-lg) 0;
+    }
+    
+    #f .row {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+    
+    #f .col-12 {
+        flex: 1 1 100%;
+    }
+    
+    .ptb .row {
+        gap: var(--space-md);
+    }
+    
+    .ptb .col-12 {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #h .logo h2 {
+        font-size: 1.25rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+    
+    #h .logo h2 small:last-child {
+        font-size: 0.6em;
+    }
+    
+    #h h1 {
+        font-size: 1.1rem;
+    }
+    
+    #f span {
+        font-size: 0.85rem;
+    }
+    
+    #f i {
+        font-size: 1.75rem;
+    }
+}
+
+/* ================================================================
+   ACCESSIBILITY
+================================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
