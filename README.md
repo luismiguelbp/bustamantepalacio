@@ -3,7 +3,7 @@
 Personal website of the Bustamante Palacio brothers with a distinctive dark theme aesthetic.
 
 🌐 **Live Sites:**
-- **Production:** [bustamantepalacio.info](https://bustamantepalacio.info)
+- **Production:** [bustamantepalacio.info](https://www.bustamantepalacio.info)
 - **GitHub Pages:** [luismiguelbp.github.io/bustamantepalacio](https://luismiguelbp.github.io/bustamantepalacio)
 
 ## Overview
