@@ -313,6 +313,10 @@ a:focus {
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 0.3s;
+    text-wrap: balance;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.35;
 }
 
 #h h1 b {
