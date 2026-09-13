@@ -47,10 +47,14 @@ Personal website of the Bustamante Palacio brothers with a distinctive dark them
 ```
 ├── index.html          # Main homepage (semantic HTML5)
 ├── assets/
-│   └── css/
-│       └── style.css   # Custom styles with CSS variables
+│   ├── css/style.css   # Custom styles with CSS variables
+│   ├── fonts/          # Local fonts
+│   ├── img/            # Images
+│   └── js/             # Custom scripts
 ├── favicon.ico
+├── AGENTS.md           # Agent instructions
 ├── .gitignore          # Git ignore rules
+├── .cursorignore       # Cursor Agent exclusions
 ├── .nojekyll           # Disable Jekyll processing
 └── README.md
 ```
@@ -78,11 +82,26 @@ Personal website of the Bustamante Palacio brothers with a distinctive dark them
 - Focus indicators for keyboard navigation
 - Proper heading hierarchy
 
+## Requirements
+
+- A modern browser (Chrome, Firefox, Safari, or Edge latest)
+- No runtime, build tools, or package installation required
+
+## Setup
+
+1. Clone the repository.
+2. No dependencies to install; third-party libraries load from CDN at runtime.
+
+## Usage
+
+Open `index.html` in a web browser. No build process required.
+
+## Verification
+
+- Manual: open `index.html` and check hero, links, responsive layout, and keyboard navigation.
+- No test, lint, or build commands apply to this static site.
+
 ## Deployment
-
-### Local Development
-
-Simply open `index.html` in a web browser. No build process required.
 
 ### GitHub Pages
 
@@ -93,6 +112,10 @@ This site is configured for GitHub Pages deployment:
 3. Select source: `main` branch, `/ (root)` folder
 
 The `.nojekyll` file ensures faster deployment by skipping Jekyll processing.
+
+## Documentation
+
+- [Agent instructions](AGENTS.md)
 
 ## License
 
