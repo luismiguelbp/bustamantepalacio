@@ -18,6 +18,8 @@ Pages deploys from `main` root.
    Stale SRI blocks the file in browsers. Canonical 5.3.8 hashes:
    - CSS: `sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB`
    - JS bundle: `sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI`
+   - Icons 1.13.2 CSS: `sha384-nWN3KqaaVcbEsCjLSV+2jMjh62Iny/+mN3srM8TZeM8N6aj7eDl5wwYggjAJ4/sJ`
+     (recompute if the Icons version changes; the stylesheet must keep `integrity` and `crossorigin`)
 3. Load Google Fonts via `<link>` with `preconnect` in `index.html`,
    never via CSS `@import` after other rules (browsers ignore it).
 4. Keep one `h1` per page; match CSS selectors if a heading level changes.
