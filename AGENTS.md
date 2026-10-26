@@ -16,6 +16,7 @@
 - Keep design tokens (colors, fonts) in `assets/css/style.css`; Bootstrap and fonts stay on CDN.
 - Preserve semantic HTML5, ARIA labels, heading hierarchy, and `prefers-reduced-motion` support.
 - GitHub Pages deploys from `main` root; keep `.nojekyll`.
+- Conventional Commits: `<type>: <short imperative summary>` (`feat`, `fix`, `docs`, `chore`, `refactor`, `test`).
 
 ## Verification
 

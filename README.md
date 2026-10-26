@@ -62,7 +62,7 @@ Personal website of the Bustamante Palacio brothers with a distinctive dark them
 ## Dependencies (all from CDN)
 
 - **Bootstrap 5.3.8**: CSS framework
-- **Bootstrap Icons 1.11.3**: Icon library
+- **Bootstrap Icons 1.13.2**: Icon library
 - **Google Fonts**: Playfair Display, DM Sans, JetBrains Mono
 - **LinkedIn Badges**: External script
 
